@@ -2211,12 +2211,13 @@ color: red;
 
     .ov{
         position: static;
+        
     }
     .ou {
         position: static;
-        right: auto;
+        /* right: auto;
         font-size: 17px;
-        padding: 5px 8px;
+        padding: 5px 8px; */
     }
 
 
