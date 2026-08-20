@@ -2205,8 +2205,11 @@ color: red;
         font-size: 19px;
     }
 
+       .ow{
+        position: relative;
+       }
+
     .ov,
-    .ow,
     .ou {
         position: static;
         right: auto;
