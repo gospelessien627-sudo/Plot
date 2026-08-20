@@ -2209,7 +2209,9 @@ color: red;
         position: relative;
        }
 
-    .ov,
+    .ov{
+        position: static;
+    }
     .ou {
         position: static;
         right: auto;
