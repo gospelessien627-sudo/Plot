@@ -1,0 +1,374 @@
+.seat-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f5f7fa;
+}
+
+.seat-layout {
+  width: 350px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+}
+
+.cockpit {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(3, 50px) 30px repeat(3, 50px);
+  gap: 10px;
+  justify-content: center;
+}
+
+.seat {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.seat:hover {
+  transform: scale(1.05);
+}
+
+.seat.selected {
+  background: green;
+  color: white;
+}
+
+.seat.occupied {
+  background: red;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.poi{
+    background-color: rgb(24, 24, 242);
+    outline: none;
+    width: 220px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    /* padding: 9px; */
+    margin-top: 20px;
+    font-size: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: 0.5s;
+    margin-right: 20px;
+}
+.poi:hover{
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+}
+.poi:disabled{
+  /* background: #555; */
+  cursor: pointer;
+  opacity: 0.7;
+}
+.spinner{
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@media (width:360px) {
+  .seats {
+  display: grid;
+  grid-template-columns: repeat(2, 50px) 30px repeat(3, 50px);
+  gap: 14px;
+  justify-content: center;
+  margin-right: 20px;
+}
+.poi{
+    background-color: rgb(24, 24, 242);
+    outline: none;
+    width: 220px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    /* padding: 9px; */
+    margin-top: 20px;
+    font-size: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: 0.5s;
+    margin-right: 20px;
+}
+.seat {
+  width: 50px;
+  height: 53px;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: bold;
+}
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 21px;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+ .seat-legend h3{
+  font-size: 40px;
+ } 
+
+}
+ @media (width:768px) {
+  .seat-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f5f7fa;
+}
+.seat-page h1{
+  font-size: 50px;
+}
+.seat-page p{
+  font-size: 25px;
+}
+
+.seat-layout {
+  width: 650px;
+  height: 670px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+}
+
+.cockpit {
+  font-size: 60px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(2, 80px) 30px repeat(3, 80px);
+  gap: 29px;
+  /* font-size: 50px; */
+  justify-content: center;
+}
+
+.seat {
+  width: 55px;
+  height: 65px;
+  border: none;
+  font-size: 28px;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  /* gap: 30px; */
+  /* padding: 50px; */
+  /* font-weight: bold; */
+}
+
+.seat:hover {
+  transform: scale(1.05);
+}
+
+.seat.selected {
+  background: green;
+  color: white;
+}
+
+.seat.occupied {
+  background: red;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.seat-legend p{
+  font-size: 30px;
+  padding-top: 20px;
+}
+.divb{
+  font-size: 40px;
+  padding-top: 20px;
+}
+.poi{
+    background-color: rgb(24, 24, 242);
+    outline: none;
+    width: 220px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    /* padding: 9px; */
+    margin-top: 20px;
+    font-size: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: 0.5s;
+    margin-right: 20px;
+}
+.poi:hover{
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+}
+.poi:disabled{
+  /* background: #555; */
+  cursor: pointer;
+  opacity: 0.7;
+}
+.spinner{
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+ }
+
+ @media (width:480px) {
+  .seat-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  background: #f5f7fa;
+}
+.seat-page h1{
+  font-size: 50px;
+}
+.seat-page p{
+  font-size: 25px;
+}
+
+.seat-layout {
+  width: 450px;
+  height: 670px;
+  margin: 30px auto;
+  /* margin-right: 90px; */
+  padding: 30px;
+  background: white;
+  border-radius: 20px;
+}
+
+.cockpit {
+  font-size: 60px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(2, 55px) 30px repeat(3, 55px);
+  gap: 29px;
+  /* font-size: 50px; */
+  justify-content: center;
+}
+
+.seat {
+  width: 55px;
+  height: 65px;
+  border: none;
+  font-size: 19px;
+  border-radius: 8px;
+  background: #ddd;
+  cursor: pointer;
+  /* gap: 30px; */
+  /* padding: 50px; */
+  /* font-weight: bold; */
+}
+
+.seat:hover {
+  transform: scale(1.05);
+}
+
+.seat.selected {
+  background: green;
+  color: white;
+}
+
+.seat.occupied {
+  background: red;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.seat-legend p{
+  font-size: 30px;
+  padding-top: 20px;
+}
+.divb{
+  font-size: 40px;
+  padding-top: 20px;
+}
+.poi{
+    background-color: rgb(24, 24, 242);
+    outline: none;
+    width: 250px;
+    height: 80px;
+    border: none;
+    border-radius: 15px;
+    /* padding: 9px; */
+    margin-top: 20px;
+    font-size: 30px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    color: white;
+    transition: 0.5s;
+    margin-right: 20px;
+}
+.poi:hover{
+    background-color: white;
+    color: black;
+    transform: translateY(-5px);
+}
+.poi:disabled{
+  /* background: #555; */
+  cursor: pointer;
+  opacity: 0.7;
+}
+.spinner{
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+ }

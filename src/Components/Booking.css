@@ -1,0 +1,192 @@
+.booking-page,
+.passenger-page,
+.flight-details,
+.confirmation {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: #f5f7fa;
+}
+
+.booking-page form,
+.passenger-page form,
+.details-card,
+.confirmation-card {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.booking-page .btn {
+  display: block; 
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  background: #0077cc; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.booking-page label,
+.passenger-page label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.booking-page input,
+.booking-page select,
+.passenger-page input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.booking-page button,
+.passenger-page button,
+.details-card button,
+.confirmation-card button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #0077cc;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:disabled{
+  background: #555;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.spinner{
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.booking-page button:hover,
+.passenger-page button:hover,
+.details-card button:hover,
+.confirmation-card button:hover {
+  opacity: 0.9;
+}
+
+.confirmation-card {
+  text-align: center;
+}
+
+.booking-reference {
+  margin: 25px 0;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f0f7ff;
+}
+
+.booking-reference h2 {
+  letter-spacing: 3px;
+}
+
+@media (width:360px) {
+ .booking-page h1{
+  font-size: 40px;
+  text-align: center;
+ } 
+ .booking-page label{
+  font-size: 25px;
+ }
+ .booking-page select,
+  .booking-page input
+ {
+  padding: 20px;
+  font-size: 20px;
+ }
+ .booking-page .btn {
+  display: block; 
+  width: 100%;
+  margin-top: 25px;
+  padding: 17px;
+  background: #0077cc; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 25px;
+  cursor: pointer;
+}
+}
+@media (width:480px) {
+  .booking-page h1{
+  font-size: 40px;
+  text-align: center;
+ } 
+ .booking-page label{
+  font-size: 32px;
+  /* padding: 50px; */
+  /* height: 50px; */
+ }
+ .booking-page select,
+  .booking-page input
+ {
+  padding: 20px;
+  font-size: 20px;
+  /* height: 30px; */
+ }
+ .booking-page .btn {
+  display: block; 
+  width: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  background: #0077cc; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 40px;
+  cursor: pointer;
+}
+  
+}
+@media (width:768px) {
+  .booking-page h1{
+  font-size: 40px;
+  text-align: center;
+ } 
+ .booking-page label{
+  font-size: 32px;
+  /* padding: 50px; */
+  /* height: 50px; */
+ }
+ .booking-page select,
+  .booking-page input
+ {
+  padding: 20px;
+  font-size: 20px;
+  /* height: 30px; */
+ }
+ .booking-page .btn {
+  display: block; 
+  width: 100%;
+  margin-top: 25px;
+  padding: 10px;
+  background: #0077cc; 
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 40px;
+  cursor: pointer;
+}
+}

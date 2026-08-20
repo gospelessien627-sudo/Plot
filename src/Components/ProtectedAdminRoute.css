@@ -1,0 +1,57 @@
+/* =========================================
+   ADMIN AUTH LOADING
+========================================= */
+
+.admin-auth-loading {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f4f7fb;
+
+  font-family: Arial, sans-serif;
+
+  color: #102a43;
+}
+
+.admin-auth-loading p {
+  margin-top: 15px;
+
+  font-size: 15px;
+
+  color: #667085;
+}
+
+
+/* =========================================
+   SPINNER
+========================================= */
+
+.admin-auth-spinner {
+  width: 45px;
+  height: 45px;
+
+  border: 4px solid #e5e7eb;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: admin-auth-spin 1s linear infinite;
+}
+
+@keyframes admin-auth-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}

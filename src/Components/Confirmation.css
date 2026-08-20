@@ -1,0 +1,41 @@
+.pay-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background: #00a86b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay-button:hover {
+  background: #008f5a;
+}
+.btn:disabled{
+  background: #555;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.spinner{
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@media (width:360px) {
+  .pay-button{
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+  /* .uwe{
+    margin-top: 0;
+  } */
+}

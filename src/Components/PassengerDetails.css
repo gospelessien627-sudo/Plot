@@ -1,0 +1,514 @@
+/* =========================================
+   PASSENGER DETAILS PAGE
+========================================= */
+
+.passenger-details-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 60px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #f4f7fb;
+
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.passenger-details-page > h1 {
+  margin: 0 0 35px;
+
+  text-align: center;
+
+  font-size: clamp(28px, 5vw, 40px);
+
+  color: #102a43;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.passenger-details-form {
+  width: 100%;
+  max-width: 600px;
+
+  padding: 35px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PASSENGER NAME
+========================================= */
+
+.passenger-details-form h3 {
+  margin: 0 0 20px;
+
+  text-align: center;
+
+  font-size: clamp(21px, 4vw, 26px);
+
+  color: #102a43;
+}
+
+
+/* =========================================
+   FLIGHT / SEAT INFORMATION
+========================================= */
+
+.passenger-details-form p {
+  margin: 10px 0;
+
+  padding: 12px 15px;
+
+  background: #f4f7fb;
+
+  border-radius: 8px;
+
+  color: #475467;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.passenger-details-form label {
+  display: block;
+
+  margin-top: 25px;
+  margin-bottom: 8px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #344054;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.passenger-details-form input {
+  width: 100%;
+  height: 50px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d0d5dd;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #101828;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s;
+}
+
+
+/* Input focus */
+
+.passenger-details-form input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Placeholder */
+
+.passenger-details-form input::placeholder {
+  color: #98a2b3;
+}
+
+
+/* =========================================
+   CONFIRM BUTTON
+========================================= */
+
+.passenger-confirm-btn {
+  width: 100%;
+
+  height: 52px;
+
+  margin-top: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Button hover */
+
+.passenger-confirm-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Button active */
+
+.passenger-confirm-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   DISABLED BUTTON
+========================================= */
+
+.passenger-confirm-btn:disabled {
+  background: #555;
+
+  color: white;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================
+   SPINNER
+========================================= */
+
+.passenger-spinner {
+  animation: passenger-spin 1s linear infinite;
+
+  font-size: 18px;
+}
+
+
+@keyframes passenger-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.passenger-back-btn {
+  width: 100%;
+
+  max-width: 300px;
+
+  height: 50px;
+
+  margin-top: 20px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.passenger-back-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .passenger-details-page {
+    padding: 40px 20px;
+  }
+
+  .passenger-details-page > h1 {
+    margin-bottom: 28px;
+    font-size: 60px;
+  }
+
+  .passenger-details-form {
+  width: 100%;
+  max-width: 800px;
+
+  padding: 35px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+  height: 680px;
+}
+
+
+  .passenger-details-form input {
+    height: 60px;
+    font-size: 36px;
+    margin-top: 50px;
+    outline: none;
+  }
+
+  /* .passenger-confirm-btn {
+    height: 50px;
+  } */
+  .passenger-confirm-btn {
+    height: 90px;
+
+    margin-top: 40px;
+
+
+    font-size: 28px;
+  }
+  .passenger-details-form h3{
+    font-size: 45px;
+  }
+  .passenger-details-form p{
+    font-size: 30px;
+    /* padding: 10px; */
+    padding-top: 30px;
+
+  }
+   .passenger-details-form label {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 20px;
+    /* text-align: center; */
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .passenger-details-page {
+    padding: 30px 15px;
+  }
+
+  .passenger-details-page > h1 {
+    font-size: 53px;
+
+    margin-bottom: 25px;
+  }
+
+.passenger-details-form {
+  width: 100%;
+  max-width: 600px;
+
+  padding: 35px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+  height: 500px;
+}
+
+  .passenger-details-form label {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+  }
+
+  .passenger-details-form input {
+    height: 55px;
+
+    font-size: 22px;
+    margin-top: 30px;
+  }
+
+  .passenger-confirm-btn {
+    height: 72px;
+
+    margin-top: 28px;
+
+
+    font-size: 20px;
+  }
+  .passenger-details-form h3{
+    font-size: 37px;
+  }
+  .passenger-details-form p{
+    font-size: 30px;
+    padding: 10px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+  .passenger-details-page {
+    padding: 25px 20px;
+  }
+
+  .passenger-details-page > h1 {
+    font-size: 40px;
+  }
+
+  .passenger-details-form {
+    padding: 20px 14px;
+  }
+
+  .passenger-details-form h3 {
+    font-size: 29px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .passenger-details-form p {
+    font-size: 23px;
+  }
+
+  .passenger-details-form label {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .passenger-details-form input {
+    height: 50px;
+    width: 220px;
+    /* right: 300px; */
+
+    font-size: 16px;
+    justify-content: left;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  /* .passport{
+    font-size: 17px;
+  } */
+
+  .passenger-confirm-btn {
+    height: 60px;
+
+    margin-top: 13px;
+
+    font-size: 24px;
+    width: 100%;
+    min-width: 150px;
+  }
+
+  .passenger-spinner {
+    font-size: 16px;
+  }
+   .passenger-details-form {
+  width: 100%;
+  max-width: 700px;
+
+  padding: 50px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+  box-sizing: border-box;
+}
+
+}
+
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+
+@media (min-width: 1200px) {
+
+  .passenger-details-page {
+    padding-top: 70px;
+  }
+
+  .passenger-details-form {
+    max-width: 600px;
+
+    padding: 40px;
+  }
+ 
+}

@@ -1,38 +1,77 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import img1 from "../assets/img1.jpg"
 import "./Home.css"
+// import Loading from './Loading'
 import img5 from "../assets/img5.jpg"
 import img3 from "../assets/img3.jpg"
 import img4 from "../assets/img4.jpg"
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { db } from './firebase'
 // import img5 from "../assets/img5.jpg"
-import img6 from "../assets/img6.jpg"
-import img2 from "../assets/img2.jpg"
-import img7 from "../assets/img7.jpg"
+// import img6 from "../assets/img6.jpg"
+// import img2 from "../assets/img2.jpg"
+// import img7 from "../assets/img7.jpg"
 import img8 from "../assets/img8.jpg"
 import img9 from "../assets/img9.jpg"
 import img10 from "../assets/img10.jpg"
 import img11 from "../assets/img11.jpg"
 import img12 from "../assets/img12.jpg"
 import img13 from "../assets/img13.jpg"
-import {FaStar, FaFacebook, FaInstagram, FaPinterest, FaChevronDown, FaCamera, FaBookmark, FaMap, FaLandmark} from "react-icons/fa"
+import {FaStar, FaFacebook, FaArrowUp, FaDirections, FaInstagram, FaPinterest, FaChevronDown, FaCamera, FaBookmark, FaMap, FaLandmark} from "react-icons/fa"
 import {MdCall, MdEmail, MdLocationOn } from "react-icons/md"
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { FaSpinner } from 'react-icons/fa'
 
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// import { subscribe } from 'firebase/data-connect'
 
 const Home = () => {
 
 
     const [isopen, setIsOpen] = useState(false);
+    const [loading, setLoading] = useState(false)
 
     const toggleMenu = () =>{
         setIsOpen(!isopen);
     }
- 
+        const navigate = useNavigate();
+
+
+        const [email, setEmail] = useState("");
+        
+        const handleBookTrip = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+        navigate("/login");
+    }, 1500);
+};
+
+        const handleSubscribe = async (e) =>{
+            e.preventDefault();
+
+            if (!email) {
+                alert("Please enter your email")
+                return;
+            }
+            try {
+                await addDoc(collection(db, "subscribers"),{
+                    email:email,
+                    subscribedAt : serverTimestamp(),
+                });
+                alert("successfully subscribed")
+
+                setEmail("");
+            } catch (error) {
+                console.log("Error subscribing :", error);
+                alert("Something went wrong. Please try again")
+            }
+        };
 
   return (
     <div className='ret'>
@@ -44,16 +83,10 @@ const Home = () => {
 
   {/* DESKTOP MENU */}
   <ul className="desktop-menu">
-    <li><a href="#home">HOME</a></li>
     <li><a href="#about">ABOUT</a></li>
     <li><a href="#tour">TOUR</a></li>
-    <li><a href="#package">PACKAGE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
   </ul>
 
-  <button className="btn">
-    BOOK TRIP
-  </button>
 
   {/* MOBILE MENU BUTTON */}
   <button
@@ -66,9 +99,9 @@ const Home = () => {
 
   {/* MOBILE DROPDOWN */}
   <ul className={isopen ? "nav-menu active" : "nav-menu"}>
-    <li>
+    {/* <li>
       <a href="#home" onClick={() => setIsOpen(false)}>HOME</a>
-    </li>
+    </li> */}
 
     <li>
       <a href="#about" onClick={() => setIsOpen(false)}>ABOUT</a>
@@ -78,13 +111,13 @@ const Home = () => {
       <a href="#tour" onClick={() => setIsOpen(false)}>TOUR</a>
     </li>
 
-    <li>
+    {/* <li>
       <a href="#package" onClick={() => setIsOpen(false)}>PACKAGE</a>
-    </li>
+    </li> */}
 
-    <li>
+    {/* <li>
       <a href="#contact" onClick={() => setIsOpen(false)}>CONTACT</a>
-    </li>
+    </li> */}
   </ul>
 
 </div>
@@ -92,14 +125,29 @@ const Home = () => {
         <div className="ll">
             <h3>ELEVATE YOUR TRAVEL JOURNEY</h3>
             <h1>Experience The <br /> Magic Of Flight</h1>
-            <button className='oo'>Book A Trip Now</button>
+
+            <button
+        className="oo"
+        onClick={handleBookTrip}
+        disabled={loading}
+    >
+            {loading ? (
+        <>
+                <FaSpinner className="spinner" />
+                Loading...
+                </>
+            ) : (
+                "Book A Trip Now"
+                )}
+                    </button>
+
         </div>
         <div className="fli">
                 <img src={img5} />
         </div>
     </div>
-    <div className="hh">
-    <div className="ee">
+    <div className="hh" >
+    <div className="ee" id='tour'>
         <div className="glo">
             <h1>Popular Destination</h1>
             <p>Discover the most Loved Destination Around the Globe </p>
@@ -147,7 +195,7 @@ const Home = () => {
     </div>
     </div>
     </div>
-    <div className="look">
+    <div className="look" id='about'>
         <div className="lop">
             <h2>Journey To The Sky Made Simple</h2>
             <p>Effotless Planning For Your Next Adventure</p>
@@ -158,13 +206,12 @@ const Home = () => {
             <p>Seamless Booking Process</p>
              
              <div className="custom">
-            <h4>Customized Plans Just For You</h4>
+            <h4>Easy Reservations, One Click Away</h4>
 
             <h5>
-                Enjoy personalized travel plans designed to match your
-                preference and interests, whether you seek adventure or
-                cultural immersion, our tailored itineraries ensure your
-                journey is uniquely yours.
+                From Flights and accomodations to activities and transfers,
+                everything you need is always available at your fingertips,
+                making travel planning effortless. 
             </h5>
         </div>
         </div>
@@ -189,13 +236,12 @@ const Home = () => {
         <p>Tailored Itineraries</p>
 
         <div className="custom">
-            <h4>Customized Plans Just For You</h4>
+            <h4>Insider Tips and Recommendations</h4>
 
             <h5>
-                Enjoy personalized travel plans designed to match your
-                preference and interests, whether you seek adventure or
-                cultural immersion, our tailored itineraries ensure your
-                journey is uniquely yours.
+                We provide curated recommendations for dining, 
+                sightseeing and hidden games, so you can experience each destination 
+                like local.
             </h5>
         </div>
         </div>
@@ -212,7 +258,7 @@ const Home = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, dolorum possimus animi molestiae, dicta culpa aliquam quas, nostrum dolore et quia eos amet commodi saepe atque mollitia eligendi ad recusandae.
             Recusandae totam repellendus quo doloribus adipisci, eaque iure in quos deserunt magni tenetur debitis ea dicta nostrum. Quaerat, enim a quasi, debitis labore quos natus repellendus ut nostrum voluptates laboriosam.
             Aperiam ad ratione, distinctio esse accusantium impedit laboriosam sunt odio nostrum numquam excepturi vel ipsum fugit hic illum a, voluptatum accusamus voluptates nobis fugiat? Perferendis dolorum aspernatur delectus fugit voluptatem.</p>
-            <button className='tre'> BOOK A FLIGHT NOW </button>
+            {/* <button className='tre'> BOOK A FLIGHT NOW </button> */}
         </div>
     </div>
     
@@ -242,14 +288,14 @@ const Home = () => {
                 <p>Witness the architectural marvels and <br />busting streets from birds-eye view, offering <br /> a unique Perspective</p>
             </div>
             <div className="did">
-                <span><FaCamera/></span>
-                <h4>Aerial <br />Cityscapes</h4>
-                <p>Witness the architectural marvels and <br />busting streets from birds-eye view, offering <br /> a unique Perspective</p>
+                <span><FaLandmark/></span>
+                <h4>Coastal <br />Wonders</h4>
+                <p>Fly over pristine coastines  <br />and turquoise waters, revealing hidden <br /> curves and vibrant coral reefs.</p>
             </div>
             <div className="did">
-                <span><FaCamera className='ddd'/></span>
-                <h4>Aerial <br />Cityscapes</h4>
-                <p>Witness the architectural marvels and <br />busting streets from birds-eye view, offering <br /> a unique Perspective</p>
+                <span><FaDirections className='ddd'/></span>
+                <h4>Historic <br />Landmarks</h4>
+                <p>observe the grandeur of ancient cities and  <br /> other significant sites in a way that <br /> ground tours cant offer</p>
             </div>
         </div>
     </div>
@@ -270,12 +316,15 @@ const Home = () => {
         disableOnInteraction: false,
     }}
     breakpoints={{
+        360:{
+            slidesPerView:1,
+        },
         480: {
             slidesPerView: 1,
         },
 
         768: {
-            slidesPerView: 2,
+            slidesPerView: 1,
         },
 
         1024: {
@@ -443,7 +492,11 @@ const Home = () => {
 
     </Swiper>
     </div>
-
+            
+                <button className='fgt' onClick={()=> window.scrollTo({
+                    top : 0, behavior : "smooth"
+                })}><FaArrowUp/></button>
+            
     <footer className="lwa">
         <div className="pqi">
             <h3>Skywings</h3>
@@ -471,10 +524,11 @@ const Home = () => {
         </div>
         <div className="xx">
             <h3>Subscribe</h3>
-            <input type="text" placeholder='Enter Your Email'/> <br />
-            <button>Subscribe</button>
+            <form onSubmit={handleSubscribe}>
+            <input type="email" placeholder='Enter Your Email' onChange={(e) =>setEmail(e.target.value)} value={email}/> <br />
+            <button type='submit'>Subscribe</button>
+            </form>
         </div>
-            
     </footer>
     <div className="dqwe">
         <span className='del'>Copyright &copy 2026 Web Design Mastery. All rights reserved </span>
