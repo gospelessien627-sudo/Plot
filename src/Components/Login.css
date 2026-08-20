@@ -13,36 +13,38 @@ nav{
 }
 
 
-.login-card{
-    width:500px;.spinner {
-  animation: spin 1s linear infinite;
-  margin-right: 8px;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-    background:white;
+.login-card {
+    width: 500px;
+    background: white;
     height: 450px;
-    padding:60px;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(0,0,0,.3);
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
     justify-content: center;
-    /* margin-top: 100px; */
     top: 150px;
     position: absolute;
     margin-left: 400px;
+}
+
+/* SPINNER */
+.spinner {
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .login-card h2{
